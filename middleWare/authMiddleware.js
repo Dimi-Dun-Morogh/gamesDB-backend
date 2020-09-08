@@ -10,7 +10,10 @@ async function authMiddleware (req, res, next) {
     req.locals = { email: decodedToken.email }; // записали имейл в объект реквеста
     return next();
   } catch (error) {
-    return res.status(401).send(error);
+    console.log('bad token', req.headers);
+    //? можно будет использовать для форс логаута на клиенте, если токен невалиден
+    return res.status(401).send({...error,
+    badToken: true});
   }
 }
 module.exports = authMiddleware;

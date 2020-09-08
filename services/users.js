@@ -1,8 +1,19 @@
 const User = require ('../models/User');
 
+
 async function createUser(data) {
   try {
     const user = await User.create(data);
+    return user;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+}
+
+async function getUserByEmail(email) {
+  try {
+    const user = await User.findOne({'email':email})
+   // const user = await User.find({ 'email':email })
     return user;
   } catch (error) {
     return Promise.reject(error);
@@ -35,4 +46,6 @@ async function updateUserData(data) {
 module.exports = {
   createUser,
   getUserById,
+  getUserByEmail,
+  updateUserData,
 }
