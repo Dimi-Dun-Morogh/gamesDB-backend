@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon app.js"
+    "dev": "npx nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +17,8 @@
     "firebase-admin": "^9.1.1",
     "mongoose": "^5.10.3",
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "12.16.1"
   }
 }

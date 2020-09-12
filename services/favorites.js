@@ -10,18 +10,25 @@ async function createFavs(email) {
   }
 }
 
+async function getFav(email) {
+  try {
+    const fav = Favorites.findOne({user: email})
+    return fav;
+  } catch (error) {
+    return Promise.reject(error);
+  }
+}
+
 async function updateFavs(data) {
   try {
     //favIds:[]
-    const favs = await Favorites.updateOne(
+    await Favorites.updateOne(
       { user: data.email },
        data,
       { upsert: true },
     );
-    const user = await User.updateOne({ email: data.email }, data, {
-      upsert: true,
-    });
-    return user;
+    const fav = await Favorites.findOne({user: data.email})
+      return fav.favIds;
   } catch (error) {
     return Promise.reject(error);
   }
@@ -30,4 +37,5 @@ async function updateFavs(data) {
 module.exports = {
   createFavs,
   updateFavs,
+  getFav,
 };

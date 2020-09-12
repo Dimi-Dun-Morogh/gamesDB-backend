@@ -13,5 +13,3 @@ const axios = require('axios');
 module.exports = {
   getGames,
 }
-
-// '/games?dates=2020-07-01,2020-07-31&ordering=-released'
