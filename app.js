@@ -8,7 +8,7 @@ const platforms = require('./routes/platforms');
 const favorites = require('./routes/favorites');
 const UserController = require('./routes/user');
 
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
 const ROUTES = {
   games: '/games',
   platforms: '/platforms',
