@@ -6,7 +6,7 @@ const config = {
   "type": "service_account",
   "project_id": "chat-app-a19cf",
   "private_key_id": "d3475d8b43221cfc24e3838c27a203086694c169",
-  "private_key":process.env.PRIVATE_KEY,
+  "private_key":process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
   "client_email": "firebase-adminsdk-zi9fp@chat-app-a19cf.iam.gserviceaccount.com",
   "client_id": "113201953749087844817",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
