@@ -1,3 +1,4 @@
 node_modules
 firebaseAdminConfig.json
-db.js
+
+.env
