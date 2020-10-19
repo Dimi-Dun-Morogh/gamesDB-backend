@@ -1,6 +1,6 @@
 const User = require ('../models/User');
 
-
+//! controllers
 async function createUser(data) {
   try {
     const user = await User.create(data);
